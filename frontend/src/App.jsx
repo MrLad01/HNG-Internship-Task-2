@@ -3,6 +3,7 @@ import { createBrowserRouter, Route, RouterProvider, createRoutesFromElements } 
 
 
 import Home from './Pages/Homepage'
+import MoviePage from './Pages/MoviePage'
 
 
 
@@ -15,7 +16,7 @@ const App = () => {
     createRoutesFromElements(
         <Route>
           <Route index element={<Home />} />
-          {/* <Route path='/login' element={<Login />} /> */}
+          <Route path='/i/movies' element={<MoviePage />} />
           {/* <Route path='/register' element={<Register />} /> */}
           {/* <Route path='/:last_name' element={<HomeComponent />} /> */}
         </Route>
