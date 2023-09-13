@@ -1,14 +1,14 @@
 import React from 'react'
 import Home from './subpages/Home'
 import Feature from './subpages/Feature'
+import Footer from './subpages/Footer'
 
-const Homepage = () => {
-  return (
+const Homepage = () => (
     <>
-      <Home />
-      <Feature />
+        <Home />
+        <Feature />
+        <Footer />
     </>
-  )
-}
+)
 
 export default Homepage

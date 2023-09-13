@@ -1,8 +1,9 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 
 const Card = () => {
   return (
-    <div>
+    <Link>
       <div>
         <div>
             <span id="movie-type"></span>
@@ -15,15 +16,15 @@ const Card = () => {
         <p className='movie-title'></p>
         <div className='movie-ratings'>
             <span className='idmb-rating'>
-                <img src="" alt="" />
+                <img src="" alt="idmb logo" />
             </span>
             <span className='rotten-tomato'>
-                <img src="" alt="" />
+                <img src="" alt="rotten tomato logo" />
             </span>
         </div>
         <span id='movie-genre'></span>
       </div>
-    </div>
+    </Link>
   )
 }
 
