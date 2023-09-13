@@ -27,7 +27,7 @@ const App = () => {
     createRoutesFromElements(
         <Route>
           <Route index element={<Home movies={movies}/>} />
-          <Route path="/i/movies" element={<MoviePage />} />
+          <Route path="/i/movies/:id" element={<MoviePage />} />
         </Route>
     )
   )

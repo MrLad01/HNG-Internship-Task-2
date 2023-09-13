@@ -8,6 +8,7 @@ module.exports = {
     "../src/Pages/subpages/SideBar.jsx",
     "../src/Pages/Homepage.jsx",
     "../src/Pages/MoviePage.jsx",
+    "../src/Components/Card.jsx"
   ],
   theme: {
     extend: {},

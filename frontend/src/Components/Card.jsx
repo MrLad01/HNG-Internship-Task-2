@@ -1,31 +1,33 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 
-const Card = () => {
-  return (
-    <Link>
-      <div data-testid='movie-card'>
+
+const Card = ({movies}) => {
+  const card = movies.map((e) => (
+      <div className='grid grid-cols-3'>
+      <Link data-testid='movie-card' to={`/i/movies/${e.id}`}>
+        <div>
         <div>
             <span id="movie-type"></span>
             <span id="like-button"></span>
         </div>
-        <img src="" alt="" />
-      </div>
+        <img src={e.poster_path} alt="poster image" />
+        </div>
       <div className='description'>
-        <span id='production-details'></span>
-        <p className='movie-title' data-testid='movie-title'></p>
+        <p className='movie-title' data-testid='movie-title'>{e.title}</p>
+        <span id='production-details'>release date: {e.release_date}</span>
         <div className='movie-ratings'>
-            <span className='idmb-rating'>
-                <img src="" alt="idmb logo" />
-            </span>
-            <span className='rotten-tomato'>
-                <img src="" alt="rotten tomato logo" />
-            </span>
+          {/* star */}
+          {e.vote_average}
         </div>
         <span id='movie-genre'></span>
-      </div>
-    </Link>
+        </div>
+      </Link>
+    </div>
+    )
   )
+
+  return ( card )
 }
 
 export default Card

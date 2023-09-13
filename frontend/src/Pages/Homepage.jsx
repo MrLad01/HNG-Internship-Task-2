@@ -6,7 +6,7 @@ import Footer from './subpages/Footer'
 const Homepage = ({movies}) => (
     <>
         <Home movies={movies} />
-        <Feature />
+        <Feature movies={movies} />
         <Footer />
     </>
 )
