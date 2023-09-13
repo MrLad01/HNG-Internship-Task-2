@@ -8,7 +8,7 @@ const App = () => {
   const [movies, setMovies] = useState([]);
   useEffect(() => {
     const fetchMovies = async () => {
-      const response = await fetch('https://api.themoviedb.org/3/movie/top_rated?api_key=03f44ed3cf05195953f4b1cc6517a406&page=1&primary_release_date.gte=2023&sort_by=popularity.desc&year=2023');
+      const response = await fetch('https://api.themoviedb.org/3/movie/top_rated?api_key=03f44ed3cf05195953f4b1cc6517a406&page=1&primary_release_date.gte=2023&sort_by=popularity.desc&year=2023&vote_average.gte=7.88');
       if(response.ok){
         const data = await response.json();
         const film = data.results;
