@@ -1,28 +1,43 @@
-import React, { useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
+import axios from 'axios'
 
 const Main = () => {
-    const id = useParams();
+    const id = useParams().id;
 
-    const [data, setData] = useState([]);
-    useEffect(() => {
-    const options = {
-        method: 'GET',
-        headers: {
-          accept: 'application/json',
-          Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwM2Y0NGVkM2NmMDUxOTU5NTNmNGIxY2M2NTE3YTQwNiIsInN1YiI6IjY1MDE5OGVlZmZjOWRlMGVkZWQ0YTZjZSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.GlUmMuFFtzAlyH8Zigpm4slmIw87yRHn3sWI35z1GIQ'
-        }
-    };
+    
+const [movie, setMovie] = useState();
+const [isLoading, setIsLoading] = useState(true);
 
-    fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=03f44ed3cf05195953f4b1cc6517a406`, options)
-    .then(response => response.json())
-    .then(response => console.log(response))
-    .then(response => setData(response.results))
-    .catch(err => console.error(err));
-}, [data])
+const fetchMovie = async () => {
+  const options = {
+    method: 'GET',
+    headers: {
+      accept: 'application/json',
+      Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwM2Y0NGVkM2NmMDUxOTU5NTNmNGIxY2M2NTE3YTQwNiIsInN1YiI6IjY1MDE5OGVlZmZjOWRlMGVkZWQ0YTZjZSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.GlUmMuFFtzAlyH8Zigpm4slmIw87yRHn3sWI35z1GIQ'
+    }
+  };
 
-    const movie = data[0];
-    console.log(movie);
+  try {
+    const response = await axios.get(`https://api.themoviedb.org/3/movie/${id}?api_key=03f44ed3cf05195953f4b1cc6517a406`, options);
+    const movie = response.data;
+    setMovie(movie);
+    setIsLoading(false);
+  } catch (err) {
+    console.error(err);
+  }
+};
+
+useEffect(() => {
+  fetchMovie();
+}, []);
+
+if (isLoading) {
+  return <div>Loading...</div>;
+}
+
+
+  console.log(movie);
 
   return (
     <React.Fragment>
@@ -32,7 +47,7 @@ const Main = () => {
         </div>
         <div id="movie-description">
             <div id="title">
-                <p></p>
+                <p>{movie.original_title}</p>
                 <span>
                     {/* genre */}
                 </span>
