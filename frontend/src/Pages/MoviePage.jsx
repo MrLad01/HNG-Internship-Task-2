@@ -3,10 +3,10 @@ import Footer from './subpages/Footer'
 import SideBar from './subpages/SideBar'
 import Main from './subpages/Main'
 
-const MoviePage = ({id}) => (
+const MoviePage = () => (
     <>
         <SideBar />
-        <Main id={id} />
+        <Main  />
         <Footer />
     </>
 )

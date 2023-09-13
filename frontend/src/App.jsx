@@ -4,10 +4,6 @@ import { createBrowserRouter, Route, RouterProvider, createRoutesFromElements, u
 import Home from './Pages/Homepage'
 import MoviePage from './Pages/MoviePage'
 
-
-
-
-
 const App = () => {
   const [movies, setMovies] = useState([]);
   useEffect(() => {
@@ -16,7 +12,6 @@ const App = () => {
       if(response.ok){
         const data = await response.json();
         const film = data.results;
-        console.log(film);
         setMovies(film);
       }
     }

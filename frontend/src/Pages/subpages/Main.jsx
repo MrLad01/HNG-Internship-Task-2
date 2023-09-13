@@ -1,8 +1,11 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useEffect, useState } from 'react'
+import { Link, useParams } from 'react-router-dom'
 
-const Main = ({id}) => {
+const Main = () => {
+    const id = useParams();
 
+    const [data, setData] = useState([]);
+    useEffect(() => {
     const options = {
         method: 'GET',
         headers: {
@@ -14,7 +17,12 @@ const Main = ({id}) => {
     fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=03f44ed3cf05195953f4b1cc6517a406`, options)
     .then(response => response.json())
     .then(response => console.log(response))
+    .then(response => setData(response.results))
     .catch(err => console.error(err));
+}, [data])
+
+    const movie = data[0];
+    console.log(movie);
 
   return (
     <React.Fragment>
