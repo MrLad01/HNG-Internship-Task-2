@@ -12,12 +12,12 @@ const Card = () => {
       </div>
       <div className='description'>
         <span id='production-details'></span>
-        <p id='movie-title'></p>
-        <div id='movie-ratings'>
-            <span id='idmb-rating'>
+        <p className='movie-title'></p>
+        <div className='movie-ratings'>
+            <span className='idmb-rating'>
                 <img src="" alt="" />
             </span>
-            <span id='rotten-tomato'>
+            <span className='rotten-tomato'>
                 <img src="" alt="" />
             </span>
         </div>
