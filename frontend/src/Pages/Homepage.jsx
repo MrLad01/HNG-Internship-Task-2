@@ -3,9 +3,9 @@ import Home from './subpages/Home'
 import Feature from './subpages/Feature'
 import Footer from './subpages/Footer'
 
-const Homepage = () => (
+const Homepage = ({movies}) => (
     <>
-        <Home />
+        <Home movies={movies} />
         <Feature />
         <Footer />
     </>

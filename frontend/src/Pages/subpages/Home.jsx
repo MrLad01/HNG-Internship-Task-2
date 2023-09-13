@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Home = () => (
+const Home = ({movies}) => (
     <React.Fragment>
         <nav>
             <div className='logo'>
@@ -17,6 +17,7 @@ const Home = () => (
             </div>
         </nav>
         <section>
+            {movies}
             <p id="title"></p>
             <div className="movie-ratings">
                 <div className="imdb-rating">
