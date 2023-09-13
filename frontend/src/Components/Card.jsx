@@ -4,6 +4,10 @@ const Card = () => {
   return (
     <div>
       <div>
+        <div>
+            <span id="movie-type"></span>
+            <span id="like-button"></span>
+        </div>
         <img src="" alt="" />
       </div>
       <div className='description'>
