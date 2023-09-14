@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom'
 const Card = ({movies}) => {
   const card = movies.map((e) => (
       <div className='grid grid-cols-3'>
-      <Link data-testid='movie-card' to={`/i/movies/${e.id}`}>
+      <Link to={`/i/movies/${e.id}`}>
         <div>
         <div>
             <span id="movie-type"></span>
