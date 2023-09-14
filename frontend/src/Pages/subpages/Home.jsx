@@ -17,7 +17,8 @@ const Home = ({movies}) => {
               const movieBackdrops = await movies.map(movie => ({
                 backdropUrl: `https://image.tmdb.org/t/p/original${movie.backdrop_path}`,
                 overview: movie.overview,
-                title: movie.original_title
+                title: movie.original_title,
+                id: movie.id
               }));
         
               // Choose a random movie backdrop
@@ -83,10 +84,11 @@ const Home = ({movies}) => {
                         <p className="movie-description">
                             {randomImageInfo?.overview}
                         </p>
-                        <button className='bg-rose-700 flex text-white items-center md:px-4 lg:px-4 xl:px-6 2xl:px-7  md:py-3 lg:py-3 xl:py-4 2xl:py-5 md:rounded-lg'>
-                            <img src={play} alt="" className='mr-2' />
-                            WATCH TRAILER
-                        </button>
+                        <a href={`/i/movies/${randomImageInfo?.id}`}>
+                            <button className='bg-rose-700 flex text-white items-center md:px-4 lg:px-4 xl:px-6 2xl:px-7  md:py-3 lg:py-3 xl:py-4 2xl:py-5 md:rounded-lg'>
+                                SEE MORE
+                            </button>
+                        </a>
                     </section>
                 </div>
             </div>
