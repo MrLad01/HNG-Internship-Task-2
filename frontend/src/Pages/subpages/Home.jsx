@@ -3,7 +3,7 @@ import movieboxLogo from '../../assets/tv.png'
 import menu from '../../assets/Menu.png'
 import { Link } from 'react-router-dom'
 import play from "../../assets/PlayIcon.png"
-// import fetchRandomImageWithOverview from "../../helpers"
+
 
 
 const Home = ({movies}) => {
