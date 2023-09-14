@@ -11,7 +11,7 @@ const Card = ({movies}) => {
             <span id="movie-type"></span>
             <span id="like-button"></span>
         </div>
-        <img src={e.poster_path} alt="poster image" />
+        <img src= {`https://image.tmdb.org/t/p/original${e.poster_path}`} alt="poster image" />
         </div>
       <div className='description'>
         <p className='movie-title' data-testid='movie-title'>{e.title}</p>
