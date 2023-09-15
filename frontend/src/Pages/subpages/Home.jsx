@@ -46,7 +46,17 @@ const Home = ({movies}) => {
           }
         
           fetchRandomImageWithOverview();
-    }
+
+             // Set up an interval to fetch a new random image every 5 seconds
+            const intervalId = setInterval(() => {
+                fetchRandomImageWithOverview();
+            }, 5000); // 5 seconds in milliseconds
+        
+            // Cleanup the interval when the component unmounts
+            return () => {
+                clearInterval(intervalId);
+            };
+            }
   }, [movies, randomImageInfo]); 
 
     return (
