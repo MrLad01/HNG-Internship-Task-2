@@ -8,15 +8,18 @@ module.exports = {
     "./src/Pages/subpages/SideBar.jsx",
     "./src/Pages/Homepage.jsx",
     "./src/Pages/MoviePage.jsx",
-    "./src/Components/Card.jsx"
+    "./src/Components/Card.jsx",
+    "./src/Pages/Error.jsx"
   ],
   theme: {
     extend: {
       screens: {
         'xs': '312px',
-      }
+      },
+      borderRadius: {
+        '7xl': '4rem'
+      },
     },
   },
   plugins: [],
 }
-

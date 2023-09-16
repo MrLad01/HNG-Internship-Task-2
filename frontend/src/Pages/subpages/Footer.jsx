@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom'
 
 const Footer = () => (
     <React.Fragment>
-        <div className="footer grid justify-center my-10 gap-3">
+        <div className="footer grid justify-center my-10 gap-3 ">
             <div className="social-media flex justify-self-center text-4xl gap-5">
             <Link to='https://web.facebook.com' target='_blank'>
              <FontAwesomeIcon icon="fa-brands fa-facebook" />

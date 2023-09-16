@@ -5,9 +5,13 @@ import Main from './subpages/Main'
 
 const MoviePage = () => (
     <>
-        <SideBar />
-        <Main  />
-        <Footer />
+        <div className="h-full w-screen">
+            <SideBar />
+            <Main  />
+        {/* <div className="absolute bottom-0 inset-x-1/3">
+            <Footer />
+             </div> */}
+        </div>
     </>
 )
 
