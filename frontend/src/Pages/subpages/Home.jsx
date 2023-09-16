@@ -88,7 +88,7 @@ const Home = ({movies}) => {
                         <p className="movie-description xs:text-xs sm:text-sm md:text-base lg:text-lg line-clamp-4 mb-3">
                             {randomImageInfo?.overview}
                         </p>
-                        <Link href={`/i/movies/${randomImageInfo?.id}`}>
+                        <Link to={`/i/movies/${randomImageInfo?.id}`}>
                             <button className='bg-rose-700 flex text-white items-center md:px-4 lg:px-4 xl:px-6 2xl:px-7  md:py-3 lg:py-3 xl:py-4 2xl:py-5 md:rounded-lg'>
                                 <img src={play} alt="" className='mr-2' />
                                 SEE MORE
